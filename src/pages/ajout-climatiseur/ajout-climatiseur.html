@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ajouter un climatiseur
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page11">
+    <ion-list>
+        <ion-item>
+          <ion-label>Model</ion-label>
+          <ion-input type="text" [(ngModel)]="model">{{model}}</ion-input>
+        </ion-item>
+      
+        <ion-item>
+            <ion-label>Prix (dt)</ion-label>
+            <ion-input type="number" [(ngModel)]="prix">{{prix}}</ion-input>
+        </ion-item>
+      
+          <ion-item>
+              <ion-label>Garantie (ans)</ion-label>
+              <ion-input type="number" [(ngModel)]="garantie">{{garantie}}</ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dimensions H x L x P (cm)</ion-label>
+            <ion-input type="text" [(ngModel)]="dim">{{dim}}</ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Autres </ion-label>
+              <ion-input type="text" [(ngModel)]="autres">{{autres}}</ion-input>
+          </ion-item>
+      
+          <ion-item>
+            <ion-label>Classe énergie</ion-label>
+            <ion-input type="text" [(ngModel)]="ce">{{ce}}</ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Lien de l'image</ion-label>
+            <ion-input type="text" [(ngModel)]="lien">{{lien}}</ion-input>
+          </ion-item>     
+      
+      </ion-list>
+      
+      <div padding>
+      <button ion-button (click) ="Add()" block>Valider l'ajout</button>
+      </div>
+</ion-content>

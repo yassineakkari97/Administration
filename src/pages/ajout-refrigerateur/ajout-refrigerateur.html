@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ajouter un refrigerateur
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page8">
+  <ion-list>
+  <ion-item>
+    <ion-label>Model</ion-label>
+    <ion-input type="text" [(ngModel)]="model">{{model}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Prix (dt)</ion-label>
+      <ion-input type="number" [(ngModel)]="prix">{{prix}}</ion-input>
+  </ion-item>
+
+  <ion-item>
+        <ion-label>Coût total (achat+15 ans d'élect en dt)</ion-label>
+        <ion-input type="number" [(ngModel)]="cout">{{cout}}</ion-input>
+  </ion-item>
+
+    <ion-item>
+        <ion-label>Consommation énergie (kWh/an)</ion-label>
+        <ion-input type="number" [(ngModel)]="conso">{{conso}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Dimensions H x L x P (cm)</ion-label>
+      <ion-input type="text" [(ngModel)]="def">{{def}}</ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Classe énergie</ion-label>
+      <ion-input type="text" [(ngModel)]="ce">{{ce}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lien de l'image</ion-label>
+      <ion-input type="text" [(ngModel)]="lien">{{lien}}</ion-input>
+    </ion-item>     
+
+</ion-list>
+
+<div padding>
+<button ion-button (click) ="Add()" block>Valider l'ajout</button>
+</div>
+</ion-content>

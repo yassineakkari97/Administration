@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      AjoutTvPc
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page2">
+
+
+    <ion-list>
+
+
+          
+
+              <ion-item>
+                  <ion-label>Lien de l'image</ion-label>
+                  <ion-input type="text" [(ngModel)]="lien">{{lien}}</ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Model</ion-label>
+                    <ion-input type="text" [(ngModel)]="model">{{model}}</ion-input>
+                  </ion-item>
+
+                <ion-item>
+                  <ion-label>Cout de l'électricité</ion-label>
+                  <ion-input type="text" [(ngModel)]="cout">{{cout}}</ion-input>
+                </ion-item>
+
+
+                  <ion-item>
+                      <ion-label>Prix</ion-label>
+                      <ion-input type="number" [(ngModel)]="prix">{{prix}}</ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label>Résolution de l'écran:</ion-label>
+                      <ion-input type="text" [(ngModel)]="res" >{{res}}</ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Puissance On (watt)</ion-label>
+                        <ion-input type="text" [(ngModel)]="pui">{{pui}}</ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Puissance Veille (watt)</ion-label>
+                        <ion-input type="text" [(ngModel)]="pv">{{pv}}</ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Puissance Off (watt)</ion-label>
+                        <ion-input type="text" [(ngModel)]="poff">{{poff}}</ion-input>
+                    </ion-item>
+                      
+                      
+      
+      </ion-list>
+      
+      <div padding>
+        <button ion-button (click) ="Add()" block>Valider l'ajout</button>
+      </div>
+
+
+</ion-content>

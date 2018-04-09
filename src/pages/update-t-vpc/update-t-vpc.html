@@ -1,0 +1,66 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>UpdateTV pc</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label>Definition</ion-label>
+          <ion-input type="text" [(ngModel)]="def">{{def}}</ion-input>
+        </ion-item>
+      
+          
+
+              <ion-item>
+                  <ion-label>Lien de l'image</ion-label>
+                  <ion-input type="text" [(ngModel)]="lien">{{lien}}</ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Model</ion-label>
+                    <ion-input type="text" [(ngModel)]="model">{{model}}</ion-input>
+                  </ion-item>
+
+
+                <ion-item>
+                  <ion-label>Veille</ion-label>
+                  <ion-input type="text" [(ngModel)]="veille">{{veille}}</ion-input>
+                </ion-item>
+                <ion-item>
+
+
+                  <ion-label>Cout par ans</ion-label>
+                  <ion-input type="text" [(ngModel)]="cout">{{cout}}</ion-input>
+                </ion-item>
+
+
+                  <ion-item>
+                      <ion-label>Prix</ion-label>
+                      <ion-input type="number" [(ngModel)]="prix">{{prix}}</ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label>Pon</ion-label>
+                      <ion-input type="umber" [(ngModel)]="pon" >{{pon}}</ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>Puissance off</ion-label>
+                        <ion-input type="text" [(ngModel)]="poff">{{poff}}</ion-input>
+                      </ion-item>
+      
+      </ion-list>
+      
+      <div padding>
+        <button ion-button (click) ="Update()" block>Valider la modification</button>
+      </div>
+
+</ion-content>

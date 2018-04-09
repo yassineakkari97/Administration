@@ -1,0 +1,67 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>UpdateAspirateur</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label>Class Energitique</ion-label>
+            <ion-input type="text" [(ngModel)]="class">{{class}}</ion-input>
+          </ion-item>
+
+
+          <ion-item>
+              <ion-label>Consommation</ion-label>
+              <ion-input type="text" [(ngModel)]="conso">{{conso}}</ion-input>
+            </ion-item>
+
+
+        <ion-item>
+          <ion-label>Facture</ion-label>
+          <ion-input type="number" [(ngModel)]="facture">{{facture}}</ion-input>
+        </ion-item>
+      
+          
+
+              <ion-item>
+                  <ion-label>Lien de l'image</ion-label>
+                  <ion-input type="text" [(ngModel)]="lien">{{lien}}</ion-input>
+                </ion-item>
+
+               
+
+
+                <ion-item>
+
+
+                    <ion-label>Model</ion-label>
+                    <ion-input type="model" [(ngModel)]="model">{{model}}</ion-input>
+                  </ion-item>
+  
+
+
+                <ion-item>
+
+
+                  <ion-label>Prix</ion-label>
+                  <ion-input type="number" [(ngModel)]="prix">{{prix}}</ion-input>
+                </ion-item>
+
+
+                  
+      
+      </ion-list>
+      
+      <div padding>
+        <button ion-button (click) ="Update()" block>Valider la modification</button>
+      </div>
+
+</ion-content>

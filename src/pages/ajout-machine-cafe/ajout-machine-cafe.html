@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      AjoutMachineCafe
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+
+  <ion-list>
+
+
+          
+
+    <ion-item>
+        <ion-label>Lien de l'image</ion-label>
+        <ion-input type="text" [(ngModel)]="lien">{{lien}}</ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Model</ion-label>
+          <ion-input type="text" [(ngModel)]="model">{{model}}</ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Prix</ion-label>
+            <ion-input type="number" [(ngModel)]="prix">{{prix}}</ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>Facture (e) sur 10 ans (dt)</ion-label>
+              <ion-input type="number" [(ngModel)]="facture">{{facture}}</ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Consommation énergie (kWh/an)</ion-label>
+              <ion-input type="number" [(ngModel)]="cons">{{cons}}</ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Pression (bar)</ion-label>
+              <ion-input type="number" [(ngModel)]="pression">{{pression}}</ion-input>
+          </ion-item>
+            
+            
+
+</ion-list>
+
+<div padding>
+<button ion-button (click) ="Add()" block>Valider l'ajout</button>
+</div>
+</ion-content>
