@@ -1,9 +1,10 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>PUser</ion-title>
+    <ion-navbar  color="dark">
+      <span text-color="my-custom-color" class="p">Produits Utilisateurs</span>
   </ion-navbar>
+
 
 </ion-header>
 
@@ -15,9 +16,10 @@
 
     <ion-list>
         <ion-item *ngFor="let produit of produitList " >
-          <h2>Nom de produit : {{ produit.name }} </h2>
-          <h2>Categorie de produit: {{ produit.categorie }} </h2>
-          <h2>Consommation de produit : {{ produit.consommation }} (KW)</h2>
+        <h2><span text-color="color" class="p">Nom: </span>{{ produit.name }} </h2>
+      <h2><span text-color="color" class="p">Catégorie: </span>{{ produit.categorie }} </h2>
+       <h2><span text-color="color" class="p">consommation: </span> {{ produit.consommation }} (KW)</h2>
+      
           
           <button ion-button (click) ="Delete(produit)"color="danger">Supprimer Produit</button>
 

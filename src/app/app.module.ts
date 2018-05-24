@@ -119,9 +119,12 @@ import { AjoutRefrigerateurPage } from '../pages/ajout-refrigerateur/ajout-refri
 import { AjoutAmplouleLedPage } from '../pages/ajout-amploule-led/ajout-amploule-led';
 import { AjoutSpotLedPage } from '../pages/ajout-spot-led/ajout-spot-led';
 import { AjoutClimatiseurPage } from '../pages/ajout-climatiseur/ajout-climatiseur';
+import { RapportPage } from '../pages/rapport/rapport';
+import { ReponserPage } from '../pages/reponser/reponser';
 
 
 import { PUserPage } from '../pages/p-user/p-user';
+import { RegisterPage } from '../pages/register/register';
 
 
 @NgModule({
@@ -142,13 +145,13 @@ import { PUserPage } from '../pages/p-user/p-user';
     Taille70100CmPage,
     TailleSupRieure100CmPage,
     KPage,PsCongelateurPage,
-    AspirateursPage,
+    AspirateursPage,RapportPage,
     AHublotPage,ClassiqueEclerageFortPage,
     OuvertureParLeDessusPage,
     SCheLingePage,PaCongelateurPage,
     CapsulesEtDosettesPage,UpdateImprimantePage,
     AutomatiquesPage,TtopPage,UpdateAspirateurPage,
-    Largeur45CmPoseLibrePage,
+    Largeur45CmPoseLibrePage,RegisterPage,
     Largeur45CmIntGrablesPage,Pm300litresPage,Pp300litresPage,
     Largeur60CmPoseLibrePage,ClimatiseursPage,Gu10CompatiblesPage,UpdateTvPage,UpdatelavelingePage,
     
@@ -175,9 +178,9 @@ import { PUserPage } from '../pages/p-user/p-user';
    ALampesPage,
    AClimPage,
    ARecPage,
-   AjoutTVPage,
+   AjoutTVPage,RegisterPage,
    AjoutTvPcPage,
-    AjoutImprimantePage,
+    AjoutImprimantePage,ReponserPage,
     AjoutAspirateurPage,
     AjoutMachineCafePage,
     AjoutLaveLingePage,
@@ -218,7 +221,7 @@ import { PUserPage } from '../pages/p-user/p-user';
     OuvertureParLeDessusPage,UpdateImprimantePage,
     SCheLingePage,
     CapsulesEtDosettesPage,TtopPage,UpdateAspirateurPage,
-    AutomatiquesPage,
+    AutomatiquesPage,RapportPage,
     Largeur45CmPoseLibrePage,PaCongelateurPage,UpdateAspPage,
     Largeur45CmIntGrablesPage,Pm300litresPage,Pp300litresPage,
     Largeur60CmPoseLibrePage,ClimatiseursPage,Gu10CompatiblesPage,UpdateTvPage,UpdatelavelingePage,
@@ -237,7 +240,7 @@ import { PUserPage } from '../pages/p-user/p-user';
    Largeur45CmPoseLibrePage,UpdateClimatiseurPage,
    Largeur45CmIntGrablesPage,UpdateLaveVaiPage,
    TabletopPage,UpdateSpotaledPage,
-   AutreSpotsPage,
+   AutreSpotsPage,RegisterPage,
    AddTvPage,
    AddLampesPage,
    AddEcransPage,
@@ -259,7 +262,7 @@ import { PUserPage } from '../pages/p-user/p-user';
     AjoutRefrigerateurPage,
     AjoutAmplouleLedPage,
     AjoutSpotLedPage,
-    AjoutClimatiseurPage
+    AjoutClimatiseurPage,ReponserPage
   ],
   providers: [
     StatusBar,

@@ -24,8 +24,7 @@
     </ion-item-divider>
     <img [src]="sanitize(item.Image)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
     <p style="color:#000000;font-size:12px;">
-      Prix moyen d'achat (€) : {{item.Prix}}
-      <br /> Facture électrique sur 5 ans (€) : {{item.Facture}}
+      Prix moyen d'achat (Dinar) : {{item.Prix}}
       <br /> Fonction recto/verso : {{item.Recto}}
     </p>
     <button ion-button (click) ="Update(item)" color="secondary">Modifier Produit</button>

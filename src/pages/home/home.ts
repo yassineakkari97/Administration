@@ -8,6 +8,7 @@ import * as firebase from 'firebase';
 import { ToastController } from 'ionic-angular';
 import { ReciptionPage } from '../reciption/reciption';
 
+import { RegisterPage } from '../register/register';
 
 
 @Component({
@@ -59,6 +60,9 @@ export class HomePage {
   
   compteur : number = 0 ;
 
+
+  pass : any ;
+  email : any ;
 
   constructor(private toastCtrl: ToastController,  private afauth:AngularFireAuth,public navCtrl: NavController,private alertCtrl: AlertController, private fire:AngularFireAuth,
     public navParams: NavParams, public formBuilder: FormBuilder, 
@@ -289,9 +293,15 @@ return false ;
 
 
   EmailLogin() {
+       console.log(this.email);
+       
 
-  this.verif() ;
-
+if(this.email==undefined || this.pass==undefined) {
+  console.log("true");
+  
+  this.alert("remplir tous les champs SVP !") ;
+}
+else {
     console.log( "main" +this.test);
     
     this.Data=[this.user3,this.user2,this.user1]
@@ -299,7 +309,7 @@ return false ;
     console.log(this.Data);
     
    
-    this.fire.auth.signInWithEmailAndPassword(this.user.value , this.password.value)
+    this.fire.auth.signInWithEmailAndPassword(this.email , this.pass)
     .then( data => {
       console.log('got some data', this.fire.auth.currentUser);
       this.presentToast('Success! You\'re logged in');
@@ -320,12 +330,15 @@ return false ;
       console.log('got an error', error); 
       this.presentToast(error.message);
     })
-  	console.log('Would sign in with ', this.user.value, this.password.value);
+  	console.log('Would sign in with ', this.email, this.pass);
   }
+
+
+}
 
   PushToSingup(){
 
-    //this.navCtrl.push(RegisterPage);
+    this.navCtrl.push(RegisterPage);
 
   }
   id:string ;
@@ -336,28 +349,8 @@ initializeAnnonceItems(): void {
 }
 
  
-  
-  Facbooklogin() {
-  this.afauth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
- .then(res => {
-   console.log(res);
-   
 
-   // check if user exist in db
-  this.afDb.list<any>('/admins', ref => ref.orderByChild('email').equalTo(res.user.email)).valueChanges().subscribe(data => {
-  console.log('user exist', data);
-   if (data && data.length == 0) {
-      this.usersRef.push({
-        email: res.user.email
-      });
-      //this.navCtrl.push(AddShoppingPage);
-    }
-    else{
-      this.navCtrl.setRoot(ReciptionPage);
-    }
-   });
- })
- }
+  
 
  
 

@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar  color="dark">
+      <span text-color="my-custom-color" class="p"> Rapports </span>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content padding>
+
+   
+    <ion-list *ngFor="let item of items | async" >
+        <ng-container *ngIf="item.verif!=true">
+        <ion-card>
+            <ion-card-header>
+             <h3><b>le message de l'utilisateur</b></h3> 
+            </ion-card-header>
+            <ion-card-content>
+              {{item.rapport}}
+            </ion-card-content>
+    <div class="inline"> 
+       <button ion-button  (click) ="Send(item)" color="primary">Reprondre</button>
+    <button ion-button  (click) ="delete(item)" color="danger">Supprimer</button>
+  </div>
+
+    
+          </ion-card>
+        </ng-container>
+      </ion-list>
+
+</ion-content>

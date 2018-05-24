@@ -1,36 +1,42 @@
 
+
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>27 Pouces </ion-title>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span text-color="my-custom-color" class="p">27 Pouces</span>
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
+<ion-content padding id="page10">
+   
+    <ion-list *ngFor="let item of items | async" >
 
-
-<ion-content padding>
- 
-
-    <ion-list *ngFor="let item of items | async">
-
+     
         
-        <ion-item-divider color="light" id="tailleInfRieure70Cm-list-item-divider13">
+        <div class="center">
+            <ion-item-divider color="light" id="tailleInfRieure70Cm-list-item-divider13">
           
-          {{item.Model}}
-          
-        </ion-item-divider>
-        <img [src]="sanitize(item.Image)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+                {{item.Model}}
+                
+              </ion-item-divider>
+            <img  [src]="sanitize(item.Image)" style="width:350px;height:300px;overflow:auto;" />
+             
         <p style="color:#000000;font-size:12px;">
-          Prix moyen d'achat (€) : {{item.Prix}}
-          <br /> Cout de l'électricité allumée tout le temps sur 5 ans (€) : {{item.Cout}}
+          Prix moyen d'achat (Dinar) : {{item.Prix}}
           <br /> Résolution de l'écran: {{item.Def}}
           <br /> Puissance On (watt): {{item.POn}}
           <br /> Puissance Veille (watt): {{item.PVeille}}
           <br /> Puissance Off (watt): {{item.POff}}
-        </p>
-        <button ion-button (click) ="Update(item)" color="secondary">Modifier Produit</button>
-        <button ion-button (click) ="Delete(item)"color="danger">Supprimer Produit</button>
+          </p>
+          
+          <button ion-button (click) ="Update(item)" color="primary">Modifier Produit</button>
+          <button ion-button (click) ="Delete(item)"color="dark">Supprimer Produit</button>
+         
+        </div>
+      
       </ion-list>
-  
-
+   
 </ion-content>

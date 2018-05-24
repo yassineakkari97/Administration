@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ProduitsPage } from '../produits/produits';
 import * as firebase from 'firebase';
+import { HomePage } from '../home/home';
+import {DomSanitizer} from '@angular/platform-browser';
 
 import { AngularFireDatabase ,AngularFireList} from 'angularfire2/database';
 import { PUserPage } from '../../pages/p-user/p-user';
+import { RapportPage } from '../../pages/rapport/rapport';
 
 @Component({
   selector: 'page-reciption',
@@ -16,7 +19,10 @@ export class ReciptionPage {
   public Labels:any[] = [] ;
   public Data:number []= [] ;
   public test : boolean = false  ;
-  
+  Image1 : string ; 
+  Image2 : string ; 
+  Image3 : string ; 
+  Image4 : string ; 
 
   cat1 : number = 0 ;
   cat2 : number = 0  ;
@@ -44,14 +50,57 @@ public barChartLegend:boolean = true;
 public barChartData:any[];
 
 public userRef :firebase.database.Reference;
+public adminRef :firebase.database.Reference;
+public produitRef :firebase.database.Reference;
+
+nbadmin : any=0 ;
+nbproduit : any=0 ;
 
 
-  constructor(private afDb: AngularFireDatabase,public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(private afDb: AngularFireDatabase,public sanitizer : DomSanitizer,public navCtrl: NavController, public navParams: NavParams) {
+   this.Image1="https://firebasestorage.googleapis.com/v0/b/yassine09841797.appspot.com/o/t%C3%A9l%C3%A9chargement.png?alt=media&token=89f38e00-7932-4513-a5f0-6398dbffbc14";
+   this.Image2="https://firebasestorage.googleapis.com/v0/b/yassine09841797.appspot.com/o/t%C3%A9l%C3%A9chargement%20(1).png?alt=media&token=8b99864e-041e-4c0a-97e0-8c9a87ef5fbc";
+    this.Image3="https://firebasestorage.googleapis.com/v0/b/yassine09841797.appspot.com/o/t%C3%A9l%C3%A9chargement%20(2).png?alt=media&token=66203e1d-2c0b-4dd1-960e-ecf213c96493";
+    this.Image4="https://firebasestorage.googleapis.com/v0/b/yassine09841797.appspot.com/o/images.jpg?alt=media&token=4353a82b-ceab-4a6c-9ed7-b5e5ac9da986";
     this.Labels = this.navParams.get('label') ;
     console.log("label" +this.Labels);
     this.userRef = firebase.database().ref('/users/');
+    this.adminRef = firebase.database().ref('/admins/');
+    this.produitRef = firebase.database().ref('/produits/');
 
+    this.adminRef.on('value', produitList => {
+      let ref : any = [] ;
+      produitList.forEach( product => {
+         
+      this.nbadmin=this.nbadmin+1;
+       
+       
+return false ;
+    });
+
+    
+    
+    
+
+  });
+
+  this.produitRef.on('value', produitList => {
+    let ref : any = [] ;
+    produitList.forEach( product => {
+       
+    this.nbproduit=this.nbproduit+1;
+     
+     
+return false ;
+  });
+
+  
+  
+  
+
+});
+
+  
       this.Data = this.navParams.get('data') ;
       console.log("data" +this.Data);
 
@@ -94,14 +143,18 @@ this.msg2="le nombre totale de produit est "+ this.total ;
     responsive: true
   };
 
+  sanitize(url:string){
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+
   public lineChartColors:Array<any> = [
     { // grey
-      backgroundColor: 'rgba(250,59,30,0.2)',
-      borderColor: 'rgba(250,59,03,1)',
-      pointBackgroundColor: 'rgba(200,159,0,1)',
+      backgroundColor: 'rgb(255,165,0)',
+      borderColor: 'rgb(0,0,0)',
+      pointBackgroundColor: 'rgb(184,134,11)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(250,159,2,0.8)'
+      pointHoverBorderColor: 'rgba(48,159,2,0.8)'
     }
   ];
   public lineChartLegend:boolean = true;
@@ -131,6 +184,14 @@ this.msg2="le nombre totale de produit est "+ this.total ;
     scaleShowVerticalLines: false,
     responsive: true
   };
+
+  Deconnexion(){
+    firebase.auth().signOut() ;
+  this.navCtrl.setRoot(HomePage);
+  }
   
+  rapport(){
+    this.navCtrl.push(RapportPage);  
+  }
 
 }

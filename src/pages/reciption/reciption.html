@@ -4,57 +4,117 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-
-  
 <ion-header>
-    <ion-toolbar> 
-        <ion-buttons start left>
-            <button ion-button icon-only menuToggle>
-                <ion-icon name="menu">
-                    
-                </ion-icon>
-            </button>  
-        </ion-buttons>    
-    <ion-title>
-      Reception
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-menu [content]="content">
-    <ion-header>
-        <ion-toolbar> 
-            <ion-buttons start left>
-                <button ion-button icon-only menuToggle>
-                    <ion-icon name="menu">
-                        
-                    </ion-icon>
-                </button>  
-            </ion-buttons>    
-        
-      </ion-toolbar>
-    </ion-header>
-      
+    <ion-navbar color="dark">
+      <ion-title >
+        <span text-color="my-custom-color" class="p"> ELEC-ECO administration </span>
+      </ion-title>
   
-    <ion-content>
+      <ion-buttons start>
+        <button ion-button on-click="rapport()" color="light" clear>Rapports </button>
+        <button ion-button on-click="goToPageOne()" color="light" clear>Gérer les produits(recommandés)</button>
+        <button ion-button on-click="goToPage()" color="light" clear> Gérer les produits(utilisateur)</button>
+        <button ion-button on-click="Deconnexion()" color="danger" clear>Deconnexion </button>
 
-        <ion-list >
-            <ion-item color="none" menuClose="" on-click="goToPageOne()" id="recommandation-list-item1">
-                Gérer les produits(recommander)
-            </ion-item>
-          
-            <ion-item color="none" menuClose="" on-click="goToPage()" id="recommandation-list-item1">
-                Gérer les produits(utilisateur)
-            </ion-item>
-            
-        </ion-list>
-  </ion-content>
-</ion-menu> 
+      </ion-buttons>
+  
+    </ion-navbar>
+    <div id="bande_horizontale"> <ion-title >
+        <span text-color="my-custom-color" class="p"> Dashboard :Statistique de votre application </span>
+      </ion-title>
+  </div> 
+  </ion-header>
 
-<ion-nav [root]="rootPage" #content></ion-nav>
+
 
 <ion-content>
-        <h3>{{msg1}}</h3>
-        <div class="row">
+       <br><br>
+<table style="border: 0">
+
+<tr>
+    <th>
+ 
+            <ion-card style="width:350px;height:300px;overflow:auto;">
+                    <img [src]="sanitize(Image1)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+                   <br><br>
+                    <div class="card-title">Utilisateurs:</div>
+                    <br>
+                    <div class="card-subtitle"><h2>{{msg1}}</h2></div>
+                  </ion-card>
+    
+       
+    </th>
+
+    <th>
+
+    </th>
+   
+
+      <th>
+
+            <ion-card style="width:350px;height:300px;overflow:auto;">
+                    <img [src]="sanitize(Image2)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+                   <br><br>
+                    <div class="card-title">Admins:</div>
+                    <br>
+                    <div class="card-subtitle"><h2>le nombre d'admins est {{nbadmin}}</h2></div>
+                  </ion-card>
+    
+       
+        </th>
+
+
+    <th>
+
+    </th>
+
+    <th>
+
+        </th>
+
+
+      <th>
+
+            <ion-card style="width:350px;height:300px;overflow:auto;" >
+                <br><br><br>
+                    <img [src]="sanitize(Image3)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+                   <br><br><br>
+                    <div class="card-title">Produits recommandés:</div>
+                    <br>
+                    <div class="card-subtitle"><h2>{{msg2}}</h2></div>
+                  </ion-card>
+       
+        </th>
+
+        <th>
+
+            </th>
+
+            <th>
+
+                </th>
+        
+              <th>
+        
+                    <ion-card style="width:350px;height:300px;overflow:auto;">
+                            <img [src]="sanitize(Image4)" style="display:block;width:50%;height:auto;margin-left:auto;margin-right:auto;" />
+                           <br><br>
+                            <div class="card-title">Produits utilisateur:</div>
+                            <br>
+                            <div class="card-subtitle"><h2>le nombre de produits utilisateur est {{nbproduit}}</h2></div>
+                          </ion-card>
+               
+                </th>
+
+        </tr>       
+        </table>
+
+
+        <table style="border: 0">
+
+            <tr>
+                <th>  
+        <div class="row"  id="banniere"  >
                 <div class="col-md-6">
                   <div style="display: block;">
                   <canvas baseChart width="300" height="400"
@@ -70,17 +130,26 @@
                 </div>
               </div>
 
-              <br>
-    <br>
+                </th>
+                <th>
 
-    <h3>{{msg2}}</h3>
 
-    <div style="display: block">
-      <canvas baseChart
+                </th>
+   
+    <th>
+    <div style="display: block" id="main"  style="width:700px;height:700px;overflow:auto;">
+      <h3>Nombre de produits selon leurs catégorie</h3>
+      <canvas baseChart 
                   [data]="doughnutChartData"
                   [labels]="doughnutChartLabels"
                   [chartType]="doughnutChartType"
                   (chartHover)="chartHovered($event)"
                   (chartClick)="chartClicked($event)"></canvas>
     </div>
+
+  </th>
+
+</tr>       
+</table>
+
 </ion-content>

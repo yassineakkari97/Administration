@@ -1,0 +1,22 @@
+
+<ion-header>
+
+    <ion-navbar  color="dark">
+        <span text-color="my-custom-color" class="p"> Reponse </span>
+    </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding>
+    <span text-color="color" class="p"><h4>rapport de l'utilisateur est : </h4></span> <p>{{rapport}}</p>
+    <span text-color="color" class="p"><h4>Date de reception de rapport est :</h4></span> {{date}}
+  
+    <ion-item>
+        <ion-label color="secondary" floating >votre message</ion-label>
+        <ion-textarea [attr.rows]="3" [(ngModel)]="msgrapport" > </ion-textarea>
+    </ion-item>
+<button ion-button  (click) ="Send(item)" color="primary">envoyer votre reponse</button>
+
+
+</ion-content>

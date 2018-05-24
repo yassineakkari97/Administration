@@ -54,13 +54,6 @@ export class InfoPage {
 
 
 
-  goToNoirEtBlanc(){
-    console.log("3asba");
-    
-
-  //  this.navCtrl.push(NoirEtBlancPage);
-
-  }
   goToImprCouleur1_20(){
     this.navCtrl.push(GoToImprCouleur1_20Page);
 

@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar  color="dark">
+    <span text-color="my-custom-color" class="p"><h4>Register</h4></span>
+</ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form">
+        <input type="text" [(ngModel)]="email" name="email" placeholder="email"/>
+        <input type="password" [(ngModel)]="pass" name="pass" placeholder="password"/>
+        <input type="password" [(ngModel)]="cpass" name="cpass"  placeholder="confirme password"/>
+        <button block color="dark" ion-button (click)="registerUser()" item-left>Register</button>
+
+        <p class="message">deja un membre?  </p>
+
+        <button ion-button color="orange" (click)="PushToSingup()" clear> login</button>
+      </form>
+      
+    </div>
+  </div>
+
+</ion-content>
